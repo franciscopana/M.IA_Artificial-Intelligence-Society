@@ -1,17 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>AIS assignements</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI and Society</title>
+    <meta name="description" content="Data-centric and responsible AI coursework: data profiling, data complexity, imbalanced learning and algorithmic fairness in insurance.">
+    <style>
+        :root {
+            --bg: #f7f7f5;
+            --card: #ffffff;
+            --text: #1d1d1f;
+            --muted: #5f6368;
+            --border: #e2e2de;
+            --accent: #1a5fb4;
+            --accent-text: #ffffff;
+            --tag-ind: #e6effa;
+            --tag-grp: #f3e8fb;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #151517;
+                --card: #1f1f22;
+                --text: #ececec;
+                --muted: #a0a0a6;
+                --border: #303034;
+                --accent: #78aeed;
+                --accent-text: #0e1a2b;
+                --tag-ind: #1f2d40;
+                --tag-grp: #33233d;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .container { max-width: 880px; margin: 0 auto; padding: 48px 16px 32px; }
+        header h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 6px; }
+        header .subtitle { font-size: 1.1rem; color: var(--muted); margin: 0 0 16px; }
+        header .meta { font-size: 0.92rem; color: var(--muted); margin: 0 0 20px; }
+        header .meta strong { color: var(--text); }
+        .intro { margin: 0 0 32px; }
+        h2 { font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin: 36px 0 12px; }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 22px;
+            margin-bottom: 14px;
+        }
+        .card-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+        .num { font-weight: 700; color: var(--accent); }
+        .card h3 { margin: 0; font-size: 1.15rem; }
+        .tag { font-size: 0.75rem; padding: 2px 8px; border-radius: 999px; background: var(--tag-ind); }
+        .tag.group { background: var(--tag-grp); }
+        .card p { margin: 8px 0 0; }
+        .result { color: var(--muted); font-size: 0.93rem; }
+        .result strong { color: var(--text); }
+        .links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+        .links a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 14px;
+            border-radius: 8px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+        .links a.primary { background: var(--accent); color: var(--accent-text); }
+        .links a:hover { opacity: 0.85; }
+        footer { margin-top: 40px; font-size: 0.88rem; color: var(--muted); }
+        footer a { color: var(--accent); }
+    </style>
 </head>
 <body>
-    <div class="container">
+<div class="container">
+    <header>
         <h1>Artificial Intelligence and Society</h1>
-        <h2>Individual assignments - Health Insurance Dataset</h2>
-        <b>By: Francisco Pires da Ana - up202108762</b>
-        <ol>
-            <li>Data Centric AI & Data Profiling: <a href="notebook1.html">notebook</a>, <a href="report1.pdf">report</a></li>
-            <li>Data Complexity & Meta Learning: <a href="notebook2.html">notebook</a>, <a href="report2.pdf">report</a></li>
-            <li>Data Imbalance: <a href="notebook3.html">notebook</a>, <a href="report3.pdf">report</a></li>
-        </ol>
+        <p class="subtitle">Data-centric and responsible AI on real insurance data</p>
+        <p class="meta">MSc in Artificial Intelligence · FCUP / FEUP, University of Porto · Final grade <strong>17/20</strong><br>
+            Francisco da Ana (up202108762)</p>
+    </header>
+
+    <p class="intro">Three individual assignments follow one health-insurance dataset (72,458 customers) from data-quality audit to
+        imbalanced learning. A group project then studies how car-insurance pricing algorithms kept discriminating through proxy
+        variables, and tests real insurer data for bias.</p>
+
+    <h2>Data-centric AI · Health-insurance case study</h2>
+
+    <div class="card">
+        <div class="card-head"><span class="num">01</span><h3>Data-Centric AI &amp; Data Profiling</h3><span class="tag">Individual</span></div>
+        <p>Profiling the dataset feature by feature with YData Profiling to find the issues that would quietly bias a model.</p>
+        <p class="result">Found <strong>ID leakage</strong>, <strong>32% missing</strong> values in <code>is_employed</code>, invalid ages and incomes, and a <strong>10:1</strong> class imbalance.</p>
+        <div class="links">
+            <a class="primary" href="01-data-profiling/notebook.html">Notebook</a>
+            <a href="01-data-profiling/report.pdf">Report (PDF)</a>
+            <a href="https://github.com/franciscopana/M.IA_Artificial-Intelligence-Society/tree/main/01-data-profiling">Details</a>
+        </div>
     </div>
+
+    <div class="card">
+        <div class="card-head"><span class="num">02</span><h3>Data Complexity &amp; Meta-Learning</h3><span class="tag">Individual</span></div>
+        <p>Measuring how hard the problem is with 22 problexity measures, then benchmarking Decision Tree, Logistic Regression and KNN.</p>
+        <p class="result">All models scored <strong>~91% accuracy</strong>, exactly the majority-class rate. Reported an inconsistency upstream in <a href="https://github.com/w4k2/problexity/issues/9">problexity #9</a>.</p>
+        <div class="links">
+            <a class="primary" href="02-data-complexity/notebook.html">Notebook</a>
+            <a href="02-data-complexity/report.pdf">Report (PDF)</a>
+            <a href="https://github.com/franciscopana/M.IA_Artificial-Intelligence-Society/tree/main/02-data-complexity">Details</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-head"><span class="num">03</span><h3>Imbalanced Learning</h3><span class="tag">Individual</span></div>
+        <p>Showing why accuracy and F1 were misleading, then choosing among 7 resampling strategies with data complexity measures.</p>
+        <p class="result">Minority-class specificity rose from <strong>0% to ~75%</strong> after rebalancing (SVM-SMOTE selected by lowest feature overlap).</p>
+        <div class="links">
+            <a class="primary" href="03-imbalanced-learning/notebook.html">Notebook</a>
+            <a href="03-imbalanced-learning/report.pdf">Report (PDF)</a>
+            <a href="https://github.com/franciscopana/M.IA_Artificial-Intelligence-Society/tree/main/03-imbalanced-learning">Details</a>
+        </div>
+    </div>
+
+    <h2>Algorithmic fairness · Car-insurance case study</h2>
+
+    <div class="card">
+        <div class="card-head"><span class="num">04</span><h3>Algorithmic Discrimination in Car Insurance</h3><span class="tag group">Group project</span></div>
+        <p>How insurers kept penalising Black neighbourhoods through proxy variables after Michigan's 2019 reform, plus a bias analysis of Allstate's rate data using disparate impact, regression residuals, census-linked subgroup analysis and SHAP.</p>
+        <p class="result">Median premium rose with an area's <strong>share of Black residents</strong>, while SHAP showed no direct effect of race, gender or age, a pattern consistent with bias entering through geography.</p>
+        <div class="links">
+            <a class="primary" href="04-fairness-car-insurance/report.pdf">Report (PDF)</a>
+            <a href="https://github.com/franciscopana/M.IA_Artificial-Intelligence-Society/tree/main/04-fairness-car-insurance">Details</a>
+        </div>
+    </div>
+
+    <footer>
+        Source and full write-ups on <a href="https://github.com/franciscopana/M.IA_Artificial-Intelligence-Society">GitHub</a>.
+    </footer>
+</div>
+</body>
 </html>

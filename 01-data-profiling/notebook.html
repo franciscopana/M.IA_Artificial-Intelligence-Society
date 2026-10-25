@@ -20133,14 +20133,14 @@ Approx. 2.33% of the orignal dataset.
         </div>
         <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
           <h3 id="First-general-observations"><strong>First general observations</strong><a class="anchor-link"
-              href="#First-general-observations">&#182;</a></h3><img src='imgs1/general-infos.png' width=600>
+              href="#First-general-observations">&#182;</a></h3><img src='figures/general-infos.png' width=600>
           <ul>
             <li>As already mentioned, the dataset contains 72458 records and 15 columns.</li>
             <li>There are 32260 miss values (3%). It's a considerable amount of missing values, which may require some
               attention.</li>
             <li>There are not duplicated records.</li>
           </ul>
-          <img src='imgs1/var-types.png' width=600>
+          <img src='figures/var-types.png' width=600>
           <ul>
             <li>Variable types:<ul>
                 <li>Numeric: <em>unnamed</em>, income, num_vehicles, age, gas_usage, rooms;</li>
@@ -20186,8 +20186,8 @@ Approx. 2.33% of the orignal dataset.
           <p>Both these features indicate a unique value for each record. The <em>unnamed</em> column is likely a
             numeric index column, while the custid is the unique identifier of the customer using a different format.
           </p>
-          <img src='imgs1/features/unnamed.png' width=400>
-          <img src='imgs1/features/custid.png' width=400>
+          <img src='figures/features/unnamed.png' width=400>
+          <img src='figures/features/custid.png' width=400>
           <p>Due to their nature, these features would not be useful in a classification problem which uses only this
             dataset, since thet don't help the models aggregating information or identifying patterns.</p>
 
@@ -20204,7 +20204,7 @@ Approx. 2.33% of the orignal dataset.
         </div>
         <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
           <h4 id="Health-Insurance"><strong>Health Insurance</strong><a class="anchor-link"
-              href="#Health-Insurance">&#182;</a></h4><img src='imgs1/features/health-ins.png' width=450>
+              href="#Health-Insurance">&#182;</a></h4><img src='figures/features/health-ins.png' width=450>
           <p>This is a boolean variable. It does not have missing/wrong values. However, it is very imbalanced with
             90.5% of the examples being True. This may be a problem in a classification problem, especially for this
             target variable, since the model may have a bias towards the majority class.</p>
@@ -20238,7 +20238,7 @@ Approx. 2.33% of the orignal dataset.
           <p>In terms of gender, there are only two categories represented: Male/Female. The distribution of the values
             is balanced, with 51.7% of examples being Female and 48.3% being Male. There are no missing values. This is
             a categorical feature which seems to be well structured.</p>
-          <img src='imgs1/features/sex.png' width=600>
+          <img src='figures/features/sex.png' width=600>
 
         </div>
       </div>
@@ -20648,7 +20648,7 @@ Approx. 2.33% of the orignal dataset.
         <div class="jp-InputPrompt jp-InputArea-prompt">
         </div>
         <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-          <img src='imgs1/features/age.png' width=600>
+          <img src='figures/features/age.png' width=600>
           <p>The mean age is 49.2 years and the median is 48. The distribution is slightly skewed to the right, since
             there are no records with age below 21 years.</p>
 
@@ -20706,7 +20706,7 @@ Approx. 2.33% of the orignal dataset.
 
 <span class="c1"># Adjust layout and display the plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;imgs1/correlations/age-sex.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figures/correlations/age-sex.png&#39;</span><span class="p">)</span>
 </pre>
             </div>
 
@@ -20750,7 +20750,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
         <div class="jp-InputPrompt jp-InputArea-prompt">
         </div>
         <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-          <img src='imgs1/correlations/age-sex.png' width=750>
+          <img src='figures/correlations/age-sex.png' width=750>
           <p>The representation of genders by age is balanced!</p>
 
         </div>
@@ -20766,7 +20766,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
         </div>
         <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
           <h4 id="is_employed-and-income"><strong>is_employed</strong> and <strong>income</strong><a class="anchor-link"
-              href="#is_employed-and-income">&#182;</a></h4><img src='imgs1/features/is_employed.png' width=600>
+              href="#is_employed-and-income">&#182;</a></h4><img src='figures/features/is_employed.png' width=600>
           <p>The <strong>is_employed</strong> feature is a boolean one. This is a problematic feature, since there are
             25515 (32%) missing values. Among the non-missing values, 95% of them are True, which may indicate a bias in
             the data. This feature may be useful in a classification problem, but the missing values must be treated, as
@@ -20846,7 +20846,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
     <span class="n">ax</span><span class="o">.</span><span class="n">bar_label</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label_type</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;imgs1/correlations/health_ins-is_employed.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figures/correlations/health_ins-is_employed.png&#39;</span><span class="p">)</span>
 </pre>
             </div>
 
@@ -20885,7 +20885,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 
 <span class="c1"># Adjust layout and display the plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;imgs1/correlations/health_ins-income.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figures/correlations/health_ins-income.png&#39;</span><span class="p">)</span>
 </pre>
             </div>
 
@@ -20929,8 +20929,8 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
         <div class="jp-InputPrompt jp-InputArea-prompt">
         </div>
         <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-          <img src='imgs1/correlations/health_ins-is_employed.png' width=600>
-          <img src='imgs1/correlations/health_ins-income.png' width=600>
+          <img src='figures/correlations/health_ins-is_employed.png' width=600>
+          <img src='figures/correlations/health_ins-income.png' width=600>
           <p>As we can see, across all income levels, the customers predominantly have health insurance.</p>
           <p>Among the <strong>unemplyed</strong> customers, <strong>75%</strong> of them have health insurance and,
             among the <strong>employed</strong> customers, <strong>90%</strong> of them have health insurance.</p>
@@ -20955,7 +20955,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Income&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;imgs1/correlations/age-income.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figures/correlations/age-income.png&#39;</span><span class="p">)</span>
 </pre>
             </div>
 
@@ -20973,7 +20973,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
         <div class="jp-InputPrompt jp-InputArea-prompt">
         </div>
         <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-          <img src='imgs1/correlations/age-income.png' width=600>
+          <img src='figures/correlations/age-income.png' width=600>
           <p>People with ages between 40 and 80 years old are more likely to have &quot;exorbitant&quot; incomes.</p>
 
         </div>
@@ -21066,11 +21066,11 @@ Name: count, dtype: float64</pre>
         </div>
         <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
           <h4 id="Housing-Type-and-Rooms"><strong>Housing Type</strong> and <strong>Rooms</strong><a class="anchor-link"
-              href="#Housing-Type-and-Rooms">&#182;</a></h4><img src='imgs1/features/housing_type.png' width=450>
+              href="#Housing-Type-and-Rooms">&#182;</a></h4><img src='figures/features/housing_type.png' width=450>
           <p>The <strong>housing type</strong> feature has 4 categories: Homeowner with mortgage/loan, Rented, Homeowner
             free and clear, Occupied with no rent. There is a little predominance of the Homeowner with mortgage/loan
             category, with 42.9% of the examples. There are 2.3% missing values, which may require some attention.</p>
-          <img src='imgs1/features/rooms.png' width=450>
+          <img src='figures/features/rooms.png' width=450>
           <p>The <strong>rooms</strong> feature is a numeric one, with values ranging from 0 to 6. The values seem to be
             very well distributed, with no missing or wrong values.</p>
 
@@ -21100,7 +21100,7 @@ Name: count, dtype: float64</pre>
         <div class="jp-InputPrompt jp-InputArea-prompt">
         </div>
         <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-          <img src='imgs1/features/num_vehicles.png' width=600>
+          <img src='figures/features/num_vehicles.png' width=600>
           <p>The <strong>num_vehicles</strong> feature is a numeric one, with values ranging from 0 to 6. There are some
             missing values (2.3%) wich may require some attention. The <strong>zeros</strong> alert indicated in the
             report is not a problem, since it is possible for a person not to have a vehicle.
@@ -21132,7 +21132,7 @@ Name: count, dtype: float64</pre>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Gas Usage&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;imgs1/features/gas_usage-frequency.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figures/features/gas_usage-frequency.png&#39;</span><span class="p">)</span>
 </pre>
             </div>
 
@@ -21150,8 +21150,8 @@ Name: count, dtype: float64</pre>
         <div class="jp-InputPrompt jp-InputArea-prompt">
         </div>
         <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-          <img src='imgs1/features/gas_usage.png' width=500>
-          <img src='imgs1/features/gas_usage-frequency.png' width=500>
+          <img src='figures/features/gas_usage.png' width=500>
+          <img src='figures/features/gas_usage-frequency.png' width=500>
           <p>The measure of <strong>gas usage</strong> is a numeric feature, with values ranging from 1 to 570. There
             are 2.3% of missing values, most of the values are concentrated between 1 and 100.</p>
 
@@ -21301,7 +21301,7 @@ Name: count, dtype: float64</pre>
         <div class="jp-InputPrompt jp-InputArea-prompt">
         </div>
         <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-          <img src='imgs1/features/recent_move.png' width=600>
+          <img src='figures/features/recent_move.png' width=600>
           <p>The <strong>recent move</strong> feature is a boolean one, with 2.3% of missing values. The distribution of
             the values is not balanced, with 85.4% of the examples being False.</p>
 
@@ -21400,7 +21400,7 @@ Name: count, dtype: int64</pre>
 
 <span class="c1"># Adjust layout and display the plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;imgs1/correlations/age-recent_moves.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figures/correlations/age-recent_moves.png&#39;</span><span class="p">)</span>
 </pre>
             </div>
 
@@ -21451,7 +21451,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
         <div class="jp-InputPrompt jp-InputArea-prompt">
         </div>
         <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-          <img src='imgs1/correlations/age-recent_moves.png' width=600>
+          <img src='figures/correlations/age-recent_moves.png' width=600>
           <p>As expected, the older the customers, the less likely they are to have recently moved.</p>
 
         </div>
@@ -21480,7 +21480,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
         <div class="jp-InputPrompt jp-InputArea-prompt">
         </div>
         <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-          <img src='imgs1/correlation-matrix.png' width=500>
+          <img src='figures/correlation-matrix.png' width=500>
 
         </div>
       </div>
@@ -21529,7 +21529,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 
 <span class="c1"># Adjust layout and display the plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;imgs1/correlations/age-marital_status.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figures/correlations/age-marital_status.png&#39;</span><span class="p">)</span>
 </pre>
             </div>
 
@@ -21572,7 +21572,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
         <div class="jp-InputPrompt jp-InputArea-prompt">
         </div>
         <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-          <img src='imgs1/correlations/age-marital_status.png' width=700>
+          <img src='figures/correlations/age-marital_status.png' width=700>
           <p>Never married people tend to be younger, while widowed people tend to be older. Between these average ages
             there are the divorced/separated and married people.</p>
 
@@ -21605,7 +21605,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 
 <span class="c1"># Adjust layout and display the plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;imgs1/correlations/recent_moves-housing_type.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figures/correlations/recent_moves-housing_type.png&#39;</span><span class="p">)</span>
 </pre>
             </div>
 
@@ -21648,7 +21648,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
         <div class="jp-InputPrompt jp-InputArea-prompt">
         </div>
         <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-          <img src='imgs1/correlations/recent_moves-housing_type.png' width=700>
+          <img src='figures/correlations/recent_moves-housing_type.png' width=700>
           <p>People who have recently moved are more likely to be renters.</p>
 
         </div>
@@ -21667,7 +21667,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
               href="#Data-quality-alerts">&#182;</a></h2>
           <p>After looking at the features individually, most of their problems were already identified. Let's look at
             the report's summary of data quality alerts.</p>
-          <img src='imgs1/alerts.png' width=450>
+          <img src='figures/alerts.png' width=450>
 
         </div>
       </div>
@@ -21684,7 +21684,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
           <p>In general, there are not many columns with an huge amount of <strong>missing values</strong>. The most
             problematic column is <strong>is_employed</strong>, with a considerable number of null cases when compared
             to the other features.</p>
-          <img src='imgs1/missing-values.png' width=550>
+          <img src='figures/missing-values.png' width=550>
 
         </div>
       </div>
