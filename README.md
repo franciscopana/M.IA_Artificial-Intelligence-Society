@@ -7,6 +7,8 @@ The website shows every notebook rendered, plus the reports. On github.com the `
 > <br />
 > **MSc in Artificial Intelligence** · FCUP / FEUP, University of Porto
 > <br />
+> Prof. Miriam Santos
+> <br />
 > Final grade: **17**/20
 
 ---
